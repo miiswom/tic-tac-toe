@@ -1,0 +1,119 @@
+/* Box Model Hack */
+* {
+  box-sizing: border-box;
+}
+
+/* Clear fix hack */
+.clearfix:after {
+  content: ".";
+  display: block;
+  clear: both;
+  visibility: hidden;
+  line-height: 0;
+  height: 0;
+}
+
+.clear {
+clear: both;
+}
+
+/******************************************
+/* BASE STYLES
+/*******************************************/
+
+body {
+margin: 0;
+padding: 0;
+font-family: serif;
+}
+
+.container {
+width: 60%;
+max-width: 1100px;
+margin: 0 auto;
+}
+
+.row {
+display: flex;
+/* border: 1px solid red; */
+}
+
+a {
+text-decoration: none;
+color: black;
+}
+
+ul {
+ margin: 0;
+ padding: 0;
+}
+
+li {
+list-style: none;
+color: black;
+text-wrap: nowrap;
+margin: 0;
+padding: 0;
+}
+
+span {
+text-wrap: nowrap;
+}
+
+
+/******************************************
+/* LAYOUT
+/*******************************************/
+
+.grid__container {
+  width: 100%;
+  height: 300px;
+  border: 1px solid black;
+
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.grid__item {
+
+  border: 1px solid black;
+  background: rgba(0, 0, 0, .1);
+
+  width: 28%;
+  flex-grow: 1;
+  max-width: 200px;
+  height: 100px;
+
+  cursor: pointer;
+}
+
+.grid__item:hover {
+  background: rgba(0, 0, 0, .2);
+}
+
+
+/******************************************
+/* ADDITIONAL STYLES
+/*******************************************/
+
+/******************************************
+/* MEDIA QUERIES { 600px, 900px, 1200px, and 1800px }
+/*******************************************/
+
+/* xs */
+/* @media (min-width: 475px) {} */
+
+/* sm */
+/* @media (min-width: 640px) {} */
+
+/* md */
+/* @media (min-width: 768px) {} */
+
+/* lg */
+/* @media (min-width: 1024px) {} */
+
+/* xl */
+/* @media (min-width: 1280px) {} */
+
+/* 2xl */
+/* @media (min-width: 1536px) {} */
