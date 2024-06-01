@@ -67,8 +67,10 @@ text-wrap: nowrap;
 
 .grid__container {
   width: 100%;
+  max-width: 600px;
   height: 300px;
   border: 1px solid black;
+  /* background: lightblue; */
 
   display: flex;
   flex-wrap: wrap;
@@ -76,7 +78,7 @@ text-wrap: nowrap;
 
 .grid__item {
 
-  border: 1px solid black;
+  border: 1px solid white;
   background: rgba(0, 0, 0, .1);
 
   width: 28%;
@@ -104,10 +106,18 @@ text-wrap: nowrap;
 /* @media (min-width: 475px) {} */
 
 /* sm */
-/* @media (min-width: 640px) {} */
+@media (min-width: 640px) {
+  .grid__item {
+    height: 20vh;
+  }
+}
 
 /* md */
-/* @media (min-width: 768px) {} */
+@media (min-width: 768px) {
+  .grid__item {
+    height: 25vh;
+  }
+}
 
 /* lg */
 /* @media (min-width: 1024px) {} */
