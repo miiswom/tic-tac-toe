@@ -20,6 +20,7 @@ function addX() {
       allClicks.push(grids[i].textContent);
       console.log(allClicks);
       checkPreviousClick();
+      grids.splice(i, 1, '')
       })
   }}
 
@@ -33,8 +34,19 @@ function addX() {
       input = 'X';
     }
   }
+
+  function botChoice() {
+    let input = '0';
+    let num = ( Math.floor( Math.random( ) * grids.length ));
+
+    let random = grids[num];
+
+    console.log(random)
+    console.log(num)
+  }
   
   addX();
+  botChoice()
 
   // function clickListener() {
   //   let e = document.onclick
