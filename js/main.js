@@ -39,7 +39,15 @@ function addX() {
     let input = '0';
     let num = ( Math.floor( Math.random( ) * grids.length ));
 
+    grids[num].addEventListener('click', () => {
+      console.log(grids[num]);
+      grids[num].textContent = input;
+      allClicks.push(grids[i].textContent);
+      grids.splice(num, 1, '')
+  })
+
     let random = grids[num];
+
 
     console.log(random)
     console.log(num)
