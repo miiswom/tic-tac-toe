@@ -182,9 +182,13 @@ const gameplay = {
   [2, 4, 6]
   ],
   
-  checkWinArr: function(round) {
+  checkWinArr: function(name, round) {
     for(let i = 0; i < this.arrayWin.length; i++) {
-      
+      if(round.every(e => this.arrayWin[i].includes(e))) {
+        alert('the winner is ' + name)
+      } else {
+        alert('no winner...')
+      }
       console.log(round.every(e => this.arrayWin[i].includes(e)) ? `a win: ${round} === ${this.arrayWin[i]}` : `a loss ${round} !== ${this.arrayWin[i]}`);
     }
   },
