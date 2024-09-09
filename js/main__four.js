@@ -1,16 +1,8 @@
-// game object to control the flow
-
-// tuck as much code as possible inside factory functions
-
-// so create FF to create players
-
-
 const gridContainer = document.querySelector('.grid__container');
 const grids = Array.from(gridContainer.querySelectorAll('.grid__item'));
 const gridsIndexes = grids.map( (e, i) => i);
 
-
-// 1. Gameboard object with a gameboard (grids) array
+// ********* Gameboard objects *********
 
 const gameboard = {
   newArr: [],
@@ -25,7 +17,6 @@ const gameboard = {
     [0, 4, 8],
     [2, 4, 6]
     ],
-
 }
 
 userClicks = (function () {
@@ -33,23 +24,8 @@ userClicks = (function () {
     grids[i].addEventListener('click', () => {
 
 /*** ROUND  LOOP***/
-    // if (this.playerOne.moves.arr.length < 5) {
-//find grid index
       aurora.findGridAndPrint(i);
       theBot.findGridAndPrint(theBot.getBotRandomChoice()), 6000;
-//print input on gameboard
-      // this.printInput(i, this.playerOne.input, this.playerOne.moves.color, this.playerOne.name, this.playerOne.moves.arr)
-//remove grid from being selected
-// get bot choice
-      // let botIndex = this.getBotRandomChoice(gridsIndexes);
-      // this.playerTwo.moves.arr.push(botIndex);
-      // this.printInput(botIndex, this.playerTwo.input, this.playerTwo.moves.color, this.playerTwo.name, this.playerTwo.moves.arr);
-
-// if(this.playerOne.moves.arr.length === 3 || this.playerTwo.moves.arr.length === 3 ) {
-      // this.checkWinArr(this.playerOne.name, this.playerOne.moves.arr);
-// this.checkWinArr(this.playerTwo.name, this.playerTwo.moves.arr);
-// }
-      // }; 
     });
   };
 })();
@@ -74,17 +50,14 @@ function createPlayer (name, input, color) {
 
     grids[index].textContent = input;
     grids[index].style.color = color;
-// this.copyOfGridIndexes.splice(gridIndex, 1)
     } else {
       alert('Pick another grid');
       throw new Error('Pick another grid');
     }
 
-  console.log(playerMoves);
-  console.log(gameboard.newArr)
-  // console.log(this.copyOfGridIndexes)
+  //console.log(playerMoves);
+  //console.log(gameboard.newArr)
   if(playerMoves.length >= 3) {
-    // let newArr = []
         for(let i = 0; i < gameboard.arrayWin.length; i++) {
           if(gameboard.arrayWin[i].every(e => playerMoves.includes(e))) {
             alert(`a win: ${name} won ${gameboard.arrayWin[i]} === ${playerMoves} `);
@@ -95,11 +68,6 @@ function createPlayer (name, input, color) {
       }
     }
 }
-
-
-  // let printInput = () => {
-
-  // };
 
   return {playerName, playerInput, playerColor, findGridAndPrint}
 }
